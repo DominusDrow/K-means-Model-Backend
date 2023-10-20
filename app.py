@@ -168,6 +168,8 @@ def query():
     # Crea una lista con la consulta Q
     consulta_q = [consulta_procesada]
 
+    documentos = [" ".join(terminos) for terminos in document_terms.values()]
+
     # Calcula el vector de la consulta Q utilizando el mismo vectorizador TF-IDF
     vectorizer = TfidfVectorizer()
     vectorizer.fit(documentos)  # Ajusta el vectorizador al corpus existente
