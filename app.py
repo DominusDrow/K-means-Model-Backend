@@ -17,7 +17,7 @@ app = Flask(__name__)
 CORS(app)
 
 document_terms = {}
-
+tfidf_df = None
 
 def updateSet(document_terms):
     terms_set = set()
