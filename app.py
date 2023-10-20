@@ -19,6 +19,7 @@ CORS(app)
 document_terms = {}
 tfidf_df = None
 
+
 def updateSet(document_terms):
     terms_set = set()
     # Recorre los valores (arreglos de términos) en el diccionario y agrega los términos al conjunto
@@ -147,6 +148,8 @@ crawl()
 
 @app.route("/query", methods=["POST"])
 def query():
+    global tfidf_df
+
     consulta_q = request.json.get("query")
     k = request.json.get("k")
 
